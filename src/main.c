@@ -90,11 +90,13 @@ void *controlTemp(void *arg) {
         externalTemp = TE;
         printf("\nTemperaturas\nInterna: %.2f\nReferencia: %.2f\nExterna(I2C): %.2f\n", TI, TR, TE);
         if(TR > TI && TI != -1){
+             printf("Referencia maior que interna, resistor ligado e ventoinha desligada\n");
             turnOnResistor(100);
             turnOffFan();
             value = 100;
             sendToUart(uart0_filestream, SEND_CTRL_SIGNAL, value);
         } else if(TR <= TI && TR != -1) {
+            printf("Referencia menor que interna, resistor desligado, ventoinha ligada\n");
             turnOffResistor();
             turnOnFan(100);
             value = -100;
