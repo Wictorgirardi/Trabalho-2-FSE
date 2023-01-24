@@ -84,7 +84,7 @@ void *controlTemp(void *arg) {
             printf("TR: %f", TR);
             userTemp = TR;
             pidUpdateReferences(TR);
-        } else if(menuChoice==2){
+        } else if(menuChoice==1){
             TR = userTemp;
         }
 
