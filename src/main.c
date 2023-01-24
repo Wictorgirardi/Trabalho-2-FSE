@@ -57,7 +57,7 @@ void *controlTemp(void *arg) {
     
     float TI, TR, TE;
     printf("KP: %f KI: %f KD:%f\n", kp, ki, kd);
-    pidSetupConstants(kp, ki, kd); // 30.0, 0.2, 400.0
+    pidSetupConstants(kp, ki, kd);
     pthread_create(&reportThread, NULL, writeReport, NULL);
     do {
         requestToUart(uart0_filestream, GET_INTERNAL_TEMP);
@@ -77,7 +77,6 @@ void *controlTemp(void *arg) {
                 valueFan = 0;
             }
         }
-        printf("menu: %i", menuChoice);
         if(menuChoice==2 || menuChoice==0){
             requestToUart(uart0_filestream, GET_REF_TEMP);
             TR = readFromUart(uart0_filestream, GET_REF_TEMP).float_value;
@@ -93,13 +92,11 @@ void *controlTemp(void *arg) {
         printf("\nTemperaturas\nInterna: %.2f\nReferencia: %.2f\nExterna(I2C): %.2f\n", TI, TR, TE);
 
         if(TR > TI && TI != -1){
-             printf("Referencia maior que interna, resistor ligado e ventoinha desligada\n");
             turnOnResistor(100);
             turnOffFan();
             value = 100;
             sendToUart(uart0_filestream, SEND_CTRL_SIGNAL, value);
         } else if(TR <= TI && TR != -1) {
-            printf("Referencia menor que interna, resistor desligado, ventoinha ligada\n");
             turnOffResistor();
             turnOnFan(100);
             value = -100;
