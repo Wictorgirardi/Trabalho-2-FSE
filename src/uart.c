@@ -16,7 +16,7 @@ int initUart(){
         printf("Erro ao abrir o UART\n");
         exit(1);
     }
-
+    
     struct termios options;
     tcgetattr(uart_filestream, &options);
     options.c_cflag = B9600 | CS8 | CLOCAL | CREAD;
@@ -31,11 +31,14 @@ int initUart(){
 void requestToUart(int uart_filestream, unsigned char code){
     unsigned char package[7] = {0x01, 0x23, code, 0x07, 0x03, 0x02, 0x06};
     short crc = calcula_CRC(package, 7);
-
+    
     unsigned char message[9];
     memcpy(message, &package, 7);
     memcpy(&message[7], &crc, 2);
     int check = write(uart_filestream, &message[0], 9);
+    if(check < 0){
+        printf("Ocorreu um erro na comunicação com o UART\n");
+    }
     sleep(1);
 }
 
@@ -51,6 +54,9 @@ void sendToUart(int uart_filestream, unsigned char code, int value){
     memcpy(&message[11], &crc, 2);
 
     int check = write(uart_filestream, &message[0], 13);
+    if(check < 0){
+        printf("Ocorreu um erro na comunicação com o UART\n");
+    }
     sleep(1);
 }
 

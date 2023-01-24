@@ -142,7 +142,6 @@ void handleDashboardInput() {
     while(!stop_dashboard_loop) {
         requestToUart(uart0_filestream, GET_USER_CMD);
         command = readFromUart(uart0_filestream, GET_USER_CMD).int_value;
-        printf("Comando recebido: %d\n", command);
         readCommand(command);
         delay(2000);
     }
