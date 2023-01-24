@@ -33,7 +33,7 @@ Os comando `make` irá compilar o código e o `bin/bin` irá executá-lo.
 Dentro do programa o usuário pode realizar o controle das placas de duas formas:
 
 * 1 - Manual
-* 2 - Dashboard<img width="221" alt="Captura de Tela 2023-01-24 às 11 38 11" src="https://user-images.githubusercontent.com/40725728/214323416-18b385f5-f168-4eb4-b008-4a2b7d4dadd5.png">
+* 2 - Dashboard
 
 
 ### Manual
