@@ -57,11 +57,13 @@ void *controlTemp(void *arg) {
     
     float TI, TR, TE;
     printf("KP: %f KI: %f KD:%f\n", kp, ki, kd);
-    pidSetupConstants(kp, ki, kd);
+    pidSetupConstants(kp, ki, kd); // 30.0, 0.2, 400.0
     pthread_create(&reportThread, NULL, writeReport, NULL);
     do {
         requestToUart(uart0_filestream, GET_INTERNAL_TEMP);
         TI = readFromUart(uart0_filestream, GET_INTERNAL_TEMP).float_value;
+        print("TI:" %f);
+        
         internalTemp = TI;
         double value = pidControl(TI);
         pwmControl(value);
@@ -89,6 +91,7 @@ void *controlTemp(void *arg) {
         TE = stream_sensor_data_normal_mode(&bme);
         externalTemp = TE;
         printf("\nTemperaturas\nInterna: %.2f\nReferencia: %.2f\nExterna(I2C): %.2f\n", TI, TR, TE);
+
         if(TR > TI && TI != -1){
              printf("Referencia maior que interna, resistor ligado e ventoinha desligada\n");
             turnOnResistor(100);
