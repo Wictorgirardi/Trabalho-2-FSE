@@ -78,7 +78,7 @@ void *controlTemp(void *arg) {
             }
         }
         printf("menu: %i", menuChoice);
-        if(menuChoice==2){
+        if(menuChoice==2 || menuChoice==0){
             requestToUart(uart0_filestream, GET_REF_TEMP);
             TR = readFromUart(uart0_filestream, GET_REF_TEMP).float_value;
             printf("TR: %f", TR);
