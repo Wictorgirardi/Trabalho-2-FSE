@@ -32,20 +32,20 @@ Os comando `make` irá compilar o código e o `bin/bin` irá executá-lo.
 
 Dentro do programa o usuário pode realizar o controle das placas de duas formas:
 
-*1 - Manual
-*2 - Dashboard
+* 1 - Manual
+* 2 - Dashboard
 
 ### Manual
 
 Para controle manual do forno o usuario deve entrar com os seguintes valores:
 
-*Controle Proporcional (P): ajusta a variável de controle de forma proporcional ao erro, ou seja, quanto maior o erro, maior a intensidade de acionamento do resistor (0 a 100%). Esse ajuste é feito pela variável Kp.
+* Controle Proporcional (P): ajusta a variável de controle de forma proporcional ao erro, ou seja, quanto maior o erro, maior a intensidade de acionamento do resistor (0 a 100%). Esse ajuste é feito pela variável Kp.
 
-*Controle Integral (PI): ajusta a variável de controle baseando-se no tempo em que o erro acontece, acumulando este erro (integral). Esse ajuste é feito pela variável Ki.
+* Controle Integral (PI): ajusta a variável de controle baseando-se no tempo em que o erro acontece, acumulando este erro (integral). Esse ajuste é feito pela variável Ki.
 
-*Controle Derivativo (PD): ajusta a variável de controle tendo como base a taxa de variação do erro ou a velocidade com a qual o sistema está variando o erro. Esse ajuste é feito pela variável Kd.
+* Controle Derivativo (PD): ajusta a variável de controle tendo como base a taxa de variação do erro ou a velocidade com a qual o sistema está variando o erro. Esse ajuste é feito pela variável Kd.
 
-*Temperatura do forno desejada.
+* Temperatura do forno desejada.
 
 Vale lembrar que para obter as temperaturas em tempo real das placas deve-se utilizar as placas 2 ou 3, já que as placas 1 e 4 não possuem sensores BME para leitura de temperaturas.
 
