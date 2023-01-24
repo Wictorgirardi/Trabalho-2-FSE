@@ -81,8 +81,8 @@ void *controlTemp(void *arg) {
         if(menuChoice==2){
             requestToUart(uart0_filestream, GET_REF_TEMP);
             TR = readFromUart(uart0_filestream, GET_REF_TEMP).float_value;
-            userTemp = TR;
             printf("TR: %f", TR);
+            userTemp = TR;
             pidUpdateReferences(TR);
         } else if(menuChoice==2){
             TR = userTemp;
