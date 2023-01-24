@@ -33,7 +33,8 @@ Os comando `make` irá compilar o código e o `bin/bin` irá executá-lo.
 Dentro do programa o usuário pode realizar o controle das placas de duas formas:
 
 * 1 - Manual
-* 2 - Dashboard
+* 2 - Dashboard<img width="221" alt="Captura de Tela 2023-01-24 às 11 38 11" src="https://user-images.githubusercontent.com/40725728/214323416-18b385f5-f168-4eb4-b008-4a2b7d4dadd5.png">
+
 
 ### Manual
 
@@ -52,5 +53,25 @@ Vale lembrar que para obter as temperaturas em tempo real das placas deve-se uti
 ### Dashboard
 
 Nessa opção o usúario tem o controle da placa pela dashboard disponibilizada pelo professor, ele pode acompanhar o acionamento das funções pelo terminal da aplicação e mais detalhadamente pela live no youtube das placas.
+
+## Vídeo de funcionamento
+<https://youtu.be/lN6xB7Z2uNc>
+
 ## Gráficos de funcionamento
+
+### Aquecimento
+Curva de aquecimento mostrando sinal de controle atuando de maneira positiva para o aquecimento do resistor da placa, ao atingir o valor de refêrencia é possivel ver pelo sinal a atuação dos ventiladores da placa e o desligamento do resistor:
+
+<img width="1041" alt="Captura de Tela 2023-01-24 às 11 09 59" src="https://user-images.githubusercontent.com/40725728/214322037-68f83e7c-139a-425a-b9d0-9363acce62c3.png">
+
+### Resfriamento 
+Curva de resfriamento mostrando sinal de controle atuando de maneira que o resistor esteja desligado e os ventiladores ligados(sinal: -100):
+
+<img width="1019" alt="Captura de Tela 2023-01-24 às 11 14 59" src="https://user-images.githubusercontent.com/40725728/214322721-fb14fa82-680a-41a3-932e-e3cadb1caccc.png">
+
+### Capturas de temperaturas 
+Pelo terminal da aplicaçao é possivel acompanhar as temperaturas coletadas durante o aquecimento ou resfriamento da placa:
+<img width="221" alt="Captura de Tela 2023-01-24 às 11 38 51" src="https://user-images.githubusercontent.com/40725728/214323555-ae67b7bf-e089-4d98-ae0e-1682a3c48081.png">
+
+
 
