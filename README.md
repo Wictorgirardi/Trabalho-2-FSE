@@ -71,6 +71,7 @@ Curva de resfriamento mostrando sinal de controle atuando de maneira que o resis
 
 ### Capturas de temperaturas 
 Pelo terminal da aplicaçao é possivel acompanhar as temperaturas coletadas durante o aquecimento ou resfriamento da placa:
+
 <img width="221" alt="Captura de Tela 2023-01-24 às 11 38 51" src="https://user-images.githubusercontent.com/40725728/214323555-ae67b7bf-e089-4d98-ae0e-1682a3c48081.png">
 
 
