@@ -62,8 +62,7 @@ void *controlTemp(void *arg) {
     do {
         requestToUart(uart0_filestream, GET_INTERNAL_TEMP);
         TI = readFromUart(uart0_filestream, GET_INTERNAL_TEMP).float_value;
-        print("TI:" %f);
-        
+        print("TI: %f", TI);
         internalTemp = TI;
         double value = pidControl(TI);
         pwmControl(value);
